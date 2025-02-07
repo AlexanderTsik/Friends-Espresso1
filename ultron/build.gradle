@@ -41,6 +41,7 @@ ext.versions = [
 ]
 
 android {
+    namespace "com.atiurin.ultron"
     compileSdkVersion versions.compileSdk
 
     defaultConfig {
@@ -54,11 +55,21 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         targetCompatibility JavaVersion.VERSION_1_8
         sourceCompatibility JavaVersion.VERSION_1_8
     }
+
+    // Add this publishing block to expose the release variant:
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
 }
+
 
 dependencies {
     implementation "androidx.recyclerview:recyclerview:${versions.recyclerview}"
@@ -79,7 +90,7 @@ group = publishedGroupId
 version = publishedVersion
 
 task sourcesJar(type: Jar) {
-    classifier = 'sources'
+    archiveClassifier.set('sources')
     from android.sourceSets.main.java.srcDirs
 }
 
@@ -90,9 +101,10 @@ task javadoc(type: Javadoc) {
 }
 
 task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier = 'javadoc'
+    archiveClassifier.set('javadoc')
     from javadoc.destinationDir
 }
+
 
 artifacts {
     archives javadocJar
