@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
 
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-parcelize'
 
-apply plugin: 'kotlin-android-extensions'
 
 ext.versions = [
         'minSdk'            : 21,
@@ -29,6 +29,7 @@ ext.versions = [
 ]
 
 android {
+    namespace "com.atiurin.sampleapp"
     compileSdkVersion versions.compileSdk
     defaultConfig {
         applicationId "com.atiurin.sampleapp"
@@ -49,6 +50,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
     }
     buildFeatures {
+        viewBinding true
         compose true
     }
     kotlinOptions {
