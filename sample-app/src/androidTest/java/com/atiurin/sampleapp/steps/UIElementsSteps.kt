@@ -9,7 +9,7 @@ import com.atiurin.ultron.extensions.click
 import org.hamcrest.CoreMatchers.not
 
 object UIElementsSteps {
-    fun verifyUIElementsPageLoaded() = UIElementsOptionsPage.button1.assertMatches(isDisplayed())
+    fun verifyUIElementsPageLoaded() = UIElementsOptionsPage.simpleButton.assertMatches(isDisplayed())
 
     fun unmarkEnableAndClickable() = with(UIElementsOptionsPage) {
         enableCheckBox.click()
@@ -23,10 +23,10 @@ object UIElementsSteps {
 
     fun chooseInvisibleOption() = UIElementsOptionsPage.radioInvisible.click()
 
-    fun validateButtonNotVisible() = UIElementsOptionsPage.button1.assertMatches(not(isDisplayed()))
+    fun validateButtonNotVisible() = UIElementsOptionsPage.simpleButton.assertMatches(not(isDisplayed()))
 
     fun clickButtonMultipleTimes(clickCount: Int) = repeat(clickCount) {
-        UIElementsOptionsPage.button1.click()
+        UIElementsOptionsPage.simpleButton.click()
     }
 
     fun validateClickCount(expectedClicks: Int) {
@@ -40,6 +40,6 @@ object UIElementsSteps {
     fun chooseGoneOption() = UIElementsOptionsPage.radioGone.click()
 
     fun validateButtonGone() {
-        UIElementsOptionsPage.button1.assertMatches(not(isDisplayed()))
+        UIElementsOptionsPage.simpleButton.assertMatches(not(isDisplayed()))
     }
 }

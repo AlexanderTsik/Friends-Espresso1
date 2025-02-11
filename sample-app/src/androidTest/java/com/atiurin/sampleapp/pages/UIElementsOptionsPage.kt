@@ -7,7 +7,7 @@ object UIElementsOptionsPage {
     val enableCheckBox by lazy { withId(R.id.checkbox_enable) }
     val clickableCheckBox by lazy { withId(R.id.checkbox_clickable) }
     val radioInvisible by lazy { withId(R.id.radio_invisible) }
-    val button1 by lazy { withId(R.id.button1) }
+    val simpleButton by lazy { withId(R.id.button1) }
 
     val lastEventStatus by lazy { withId(R.id.last_event_status)}
     val radioGone by lazy { withId(R.id.radio_gone)}
