@@ -8,6 +8,14 @@ import com.atiurin.ultron.extensions.click
 import com.atiurin.ultron.extensions.perform
 
 object DashboardSteps {
+
+    // ase ar mashvebinebs ratomghac titqmis arcert funqcias tolobis nishani tu ar miweria
+//    fun verifyDashboardLoaded() {
+//        with(DashboardPage) {
+//            drawerLayout.assertMatches(isDisplayed())
+//            toolbar.assertMatches(isDisplayed())
+//        }
+//    }
     fun verifyDashboardLoaded() = with(DashboardPage) {
         drawerLayout.assertMatches(isDisplayed())
         toolbar.assertMatches(isDisplayed())
