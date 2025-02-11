@@ -5,4 +5,5 @@ object TestConstants {
     const val GREETING_MESSAGE = "Hi Chandler, hope you're doing well!"
     const val CUSTOM_CLICKS_TEXT = "Custom Clicks"
     const val WAIT_TIMEOUT = 3L
+    const val NUMBER_OF_CLICKS = 8
 }

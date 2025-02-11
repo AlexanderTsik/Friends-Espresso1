@@ -8,6 +8,7 @@ import com.atiurin.sampleapp.constants.TestConstants
 
 import com.atiurin.sampleapp.steps.ChatSteps
 import com.atiurin.sampleapp.steps.CustomClicksSteps
+import com.atiurin.sampleapp.steps.DashboardSteps
 
 import com.atiurin.sampleapp.tests.BaseTest
 import org.junit.Rule
@@ -32,15 +33,18 @@ class GreetingTests: BaseTest() {
     */
     @Test
     fun testChatFlow() {
-        ChatSteps.verifyDashboardLoaded()
-
-
-        ChatSteps.openChatWithFriend(TestConstants.FRIEND_NAME)
-        ChatSteps.verifyChatOpenWithFriend(TestConstants.FRIEND_NAME)
-
-        ChatSteps.sendMessage(TestConstants.GREETING_MESSAGE)
-        ChatSteps.verifyMessageSent(TestConstants.GREETING_MESSAGE)
+        with(DashboardSteps) {
+            verifyDashboardLoaded()
+        }
+        with(ChatSteps) {
+            openChatWithFriend(TestConstants.FRIEND_NAME)
+            verifyChatOpenWithFriend(TestConstants.FRIEND_NAME)
+            sendMessage(TestConstants.GREETING_MESSAGE)
+            verifyMessageSent(TestConstants.GREETING_MESSAGE)
+        }
     }
+
+
     /*2 TC
 
         create kotlin test - fun
@@ -54,11 +58,15 @@ class GreetingTests: BaseTest() {
     */
     @Test
     fun testCustomClicksFlow() {
-        CustomClicksSteps.verifyDashboardLoaded()
-        CustomClicksSteps.openNavigationDrawer()
-        CustomClicksSteps.selectCustomClicksOption()
-        CustomClicksSteps.verifyCustomClicksPageLoaded()
-        CustomClicksSteps.markCornerCircles()
-        CustomClicksSteps.verifyCornerCirclesMarked()
+        with(DashboardSteps) {
+            verifyDashboardLoaded()
+            openNavigationDrawer()
+            selectCustomClicksOption()
+        }
+        with(CustomClicksSteps) {
+            verifyCustomClicksPageLoaded()
+            markCornerCircles()
+            verifyCornerCirclesMarked()
+        }
     }
 }

@@ -20,6 +20,8 @@ object DashboardPage {
     fun friendItem(friendName: String): Matcher<View> = withText(friendName)
 
     // Selector for the "Custom Clicks" menu option.
-    val customClicksOption: Matcher<View> by lazy { withText("Custom Clicks") }
+    val customClicksOption: Matcher<View> by lazy { withId(R.id.custom_clicks_nav_item) }
+
+    val uiElementsOption: Matcher<View> by lazy { withId(R.id.ui_elements) }
 }
 
