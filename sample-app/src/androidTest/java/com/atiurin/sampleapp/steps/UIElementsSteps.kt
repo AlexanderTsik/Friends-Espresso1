@@ -35,11 +35,12 @@ object UIElementsSteps {
         )
     }
 
-
     // Step 7: Choose "Gone" option and validate button is gone
     fun chooseGoneOption() = UIElementsOptionsPage.radioGone.click()
 
     fun validateButtonGone() {
-        UIElementsOptionsPage.simpleButton.assertMatches(not(isDisplayed()))
+        with(UIElementsOptionsPage) {
+            simpleButton.assertMatches(not(isDisplayed()))
+        }
     }
 }

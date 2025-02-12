@@ -4,9 +4,7 @@ import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
 import com.atiurin.sampleapp.activity.MainActivity
-import com.atiurin.sampleapp.constants.TestConstants
-import com.atiurin.sampleapp.constants.TestConstants.NUMBER_OF_CLICKS
-import com.atiurin.sampleapp.steps.ChatSteps
+import com.atiurin.sampleapp.data.constants.TestConstants.NUMBER_OF_CLICKS
 import com.atiurin.sampleapp.steps.DashboardSteps
 import com.atiurin.sampleapp.steps.UIElementsSteps
 import com.atiurin.sampleapp.tests.BaseTest
@@ -20,6 +18,7 @@ class UIElementsTests : BaseTest() {
 
     @get:Rule
     val activityTestRule = ActivityScenarioRule(MainActivity::class.java)
+
 /*1 TC
  - create kotlin test - fun
 - 1. check that the dashboard is loaded
@@ -39,7 +38,7 @@ class UIElementsTests : BaseTest() {
             selectUIElementsOption()
         }
 
-        with(UIElementsSteps){
+        with(UIElementsSteps) {
             verifyUIElementsPageLoaded()
             unmarkEnableAndClickable()
             validateUnmarkStatuses()
@@ -67,7 +66,7 @@ class UIElementsTests : BaseTest() {
             selectUIElementsOption()
         }
 
-        with(UIElementsSteps){
+        with(UIElementsSteps) {
             verifyUIElementsPageLoaded()
             clickButtonMultipleTimes(NUMBER_OF_CLICKS)
             validateClickCount(NUMBER_OF_CLICKS)
