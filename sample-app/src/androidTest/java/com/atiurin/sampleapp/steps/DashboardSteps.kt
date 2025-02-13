@@ -60,6 +60,6 @@ object DashboardSteps {
                 swiper(400, 200, 10)
             }
         }
-        throw AssertionError("Friend '$friendName' not found after 7 attempts")
+        throw AssertionError("Friend '$friendName' not found after 6 attempts")
     }
 }

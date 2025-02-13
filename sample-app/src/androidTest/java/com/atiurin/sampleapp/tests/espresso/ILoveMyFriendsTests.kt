@@ -14,7 +14,7 @@ import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
 @LargeTest
-class ILoveBoyfriendsTests : BaseTest() {
+class ILoveMyFriendsTests : BaseTest() {
 
     @get:Rule
     val activityTestRule = ActivityScenarioRule(MainActivity::class.java)
@@ -50,6 +50,7 @@ class ILoveBoyfriendsTests : BaseTest() {
         }
     }
 
+    // this fails since there is no friend25
     @Test
     fun testSendMessageToFriend25() {
         with(TestConstants) {
