@@ -1,23 +1,17 @@
 package com.atiurin.sampleapp.tests.espresso
 
-import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
-import com.atiurin.sampleapp.activity.MainActivity
 import com.atiurin.sampleapp.data.constants.TestConstants
 import com.atiurin.sampleapp.steps.ChatSteps
 import com.atiurin.sampleapp.steps.DashboardSteps
-import com.atiurin.sampleapp.tests.BaseTest
-import org.junit.Rule
+import com.atiurin.sampleapp.tests.MyBaseTest
 import org.junit.Test
 import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
 @LargeTest
-class ILoveMyFriendsTests : BaseTest() {
-
-    @get:Rule
-    val activityTestRule = ActivityScenarioRule(MainActivity::class.java)
+class ILoveMyFriendsTests : MyBaseTest() {
 
     @Test
     fun testOpenChatAndSendMessage() {
