@@ -20,6 +20,8 @@ object ChatPage : Page<ChatPage>() {
         }
     }
 
+
+
     val messagesList = withRecyclerView(R.id.messages_list)
     val clearHistoryBtn = withText("Clear history")
     val inputMessageText = withId(R.id.message_input_text)
